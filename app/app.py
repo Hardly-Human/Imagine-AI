@@ -16,7 +16,9 @@ def privacy_policy():
     st.sidebar.info('PRIVACY POLICY: uploaded images are never saved or stored. They are held entirely within memory for prediction \
             and discarded after the final results are displayed. ')
 
-
+def expander_faq():
+    expander_faq = st.beta_expander("More About the Project")
+    expander_faq.write("Hi there! If you have any questions about our project, or simply want to check out the source code, please visit my github repo: https://github.com/Hardly-Human/Imagine-AI")
 
 #####################################
 # Sidebar options
@@ -44,17 +46,17 @@ SIDEBAR_TASKS = [SIDEBAR_TASK_FACIAL_RECOGNITION, SIDEBAR_TASK_IMAGE_COLORIZATIO
 
 def main():
     st.sidebar.warning('\
-        For Best results, Please upload SINGLE-person images')
+                For Best results, Please use SINGLE-person images')
     st.sidebar.write(" ------ ")
     st.sidebar.title("Explore the Following")
 
     st.title("Welcome to Imagine AI")
-
+    expander_faq()
     app_mode = st.sidebar.selectbox("Please select from the following", SIDEBAR_OPTIONS)
 
     if(app_mode == SIDEBAR_OPTION_PROJECT_INFO):
         st.sidebar.write(" ------ ")
-        st.sidebar.success("Project information showing on the right!")
+        st.sidebar.success("Project information showing on the right! 👉 ")
         st.write(get_file_content_as_string("project-info.md"))
 
     elif(app_mode == SIDEBAR_OPTION_IMAGE_PLAYGROUND):
@@ -81,6 +83,7 @@ def main():
             st.header(SIDEBAR_TASK_IMAGE_CAPTIONING)
             generate_caption()
             privacy_policy()
+
 
 
 

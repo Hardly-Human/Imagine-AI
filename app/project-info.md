@@ -5,7 +5,7 @@ machine learning & deep learning.
 
 **Add color to old family photos and historic images with colorization API.**
 
-<img src="./img/image-colorization-demo.png">
+![image-colorization-demo](https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/img/image-colorization-demo.png)
 
 ---
 
@@ -21,4 +21,4 @@ machine learning & deep learning.
 
 **Transfers the style from one image onto the content of another image.**
 
-<img src="./img/style-transfer-demo.png">
+![style-transfer](https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/img/style-transfer-demo.png)

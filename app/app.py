@@ -19,6 +19,7 @@ def privacy_policy():
 def expander_faq():
     expander_faq = st.beta_expander("More About the Project")
     expander_faq.write("Hi there! If you have any questions about our project, or simply want to check out the source code, please visit my github repo: https://github.com/Hardly-Human/Imagine-AI")
+    expander_faq.write("You can contact me at https://www.rehan.tech ")
 
 #####################################
 # Sidebar options

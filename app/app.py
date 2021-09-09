@@ -3,6 +3,7 @@ import streamlit as st
 
 from facial_recognition import facial_recognition
 from image_colorization import image_colorization
+from style_transfer import style_transfer
 from toonify_image import toonify_image
 from image_captioning import generate_caption
 
@@ -62,6 +63,7 @@ def main():
             image_colorization()
         elif (task == SIDEBAR_TASK_STYLE_TRANSFER):
             st.header(SIDEBAR_TASK_STYLE_TRANSFER)
+            style_transfer()
         elif(task == SIDEBAR_TASK_TOONIFY_IMAGE):
             st.header(SIDEBAR_TASK_TOONIFY_IMAGE)
             toonify_image()

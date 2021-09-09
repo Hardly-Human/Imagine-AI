@@ -12,7 +12,7 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
     return href
 
 
-def image_colorization():
+def toonify_image():
     image_file = st.file_uploader("Upload Image", type = ['jpg','png','jpeg'])
 
     if image_file is None:
@@ -25,11 +25,11 @@ def image_colorization():
         image_path = "saved_image.jpg"
         st.image(image1,width = 400)
 
-    if st.sidebar.button("Colorize 🎨 "):
+    if st.sidebar.button("Toonify 🎃 "):
         if image_file is not None:
-            st.warning("Please Wait⌛....Artistic Work in progress 🎨🎭👨‍🎨 ")
+            st.warning("Please wait.. by the way Nice picture..😊")
             r = requests.post(
-                "https://api.deepai.org/api/colorizer",
+                "https://api.deepai.org/api/toonify",
                 files={
                     'image': open('saved_image.jpg', 'rb'),
                 },
@@ -39,15 +39,15 @@ def image_colorization():
             color_image_url = r.json()["output_url"]
 
             img_data = requests.get(color_image_url).content
-            with open('color_image.jpg', 'wb') as handler:
+            with open('toonified_image.jpg', 'wb') as handler:
                 handler.write(img_data)
-            st.success("Image Colorization Successfull 🙌🥳🎉")
-            color_image = Image.open('color_image.jpg')
+            st.success("That looks good..🎊✨")
+            toonified_image = Image.open('toonified_image.jpg')
 
-            st.subheader("Colorized Image")
-            st.image(color_image, width=400)
+            st.subheader("Toonified Image")
+            st.image(toonified_image)
 
-            st.markdown(get_binary_file_downloader_html('color_image.jpg', 'Picture'), unsafe_allow_html=True)
+            st.markdown(get_binary_file_downloader_html('toonified_image.jpg', 'Picture'), unsafe_allow_html=True)
 
         else:
             st.error("Please Upload Image!!!")

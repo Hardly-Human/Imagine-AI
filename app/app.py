@@ -1,8 +1,10 @@
 import urllib.request
 import streamlit as st
+
 from facial_recognition import facial_recognition
 from image_colorization import image_colorization
 from toonify_image import toonify_image
+from image_captioning import generate_caption
 
 def get_file_content_as_string(path):
     url = 'https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/' + path
@@ -65,6 +67,8 @@ def main():
             toonify_image()
         elif(task == SIDEBAR_TASK_IMAGE_CAPTIONING):
             st.header(SIDEBAR_TASK_IMAGE_CAPTIONING)
+            generate_caption()
+
 
 
 

@@ -15,7 +15,7 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
 
 def style_transfer():
 
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
 
     col1.title("Original Image")
     image_file = col1.file_uploader("Upload Original Image", type = ['jpg','png','jpeg'])

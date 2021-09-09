@@ -1,6 +1,10 @@
-import os
+import urllib.request
 import streamlit as st
 
+def get_file_content_as_string(path):
+    url = 'https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/' + path
+    response = urllib.request.urlopen(url)
+    return response.read().decode("utf-8")
 
 
 
@@ -27,6 +31,7 @@ def main():
     if(app_mode == SIDEBAR_OPTION_PROJECT_INFO):
         st.sidebar.write(" ------ ")
         st.sidebar.success("Project information showing on the right!")
+        st.write(get_file_content_as_string("project-info.md"))
 
 
 if __name__=="__main__":

@@ -12,6 +12,11 @@ def get_file_content_as_string(path):
     response = urllib.request.urlopen(url)
     return response.read().decode("utf-8")
 
+def privacy_policy():
+    st.sidebar.info('PRIVACY POLICY: uploaded images are never saved or stored. They are held entirely within memory for prediction \
+            and discarded after the final results are displayed. ')
+
+
 
 #####################################
 # Sidebar options
@@ -58,18 +63,25 @@ def main():
         if (task == SIDEBAR_TASK_FACIAL_RECOGNITION):
             st.header(SIDEBAR_TASK_FACIAL_RECOGNITION)
             facial_recognition()
+            privacy_policy()
         elif(task == SIDEBAR_TASK_IMAGE_COLORIZATION):
             st.header(SIDEBAR_TASK_IMAGE_COLORIZATION)
             image_colorization()
+            privacy_policy()
         elif (task == SIDEBAR_TASK_STYLE_TRANSFER):
             st.header(SIDEBAR_TASK_STYLE_TRANSFER)
             style_transfer()
+            privacy_policy()
+
         elif(task == SIDEBAR_TASK_TOONIFY_IMAGE):
             st.header(SIDEBAR_TASK_TOONIFY_IMAGE)
             toonify_image()
+            privacy_policy()
         elif(task == SIDEBAR_TASK_IMAGE_CAPTIONING):
             st.header(SIDEBAR_TASK_IMAGE_CAPTIONING)
             generate_caption()
+            privacy_policy()
+
 
 
 

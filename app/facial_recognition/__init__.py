@@ -1,9 +1,10 @@
 import streamlit as st
 import cv2
-from PIL import Image, ImageEnhance
+from PIL import Image
 import numpy as np
 
-face_cascade = cv2.CascadeClassifier('./frecog/haarcascade_frontalface_default.xml')
+
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 @st.cache
 def load_image(image):
@@ -29,12 +30,16 @@ def facial_recognition():
     if image_file is not None:
         our_img = load_image(image_file)
         st.subheader('Uploaded Image')
-        st.image(our_img, width = 800)
+        st.image(our_img, width = 500 )
     else:
         st.warning("Please Upload an Image")
 
-    if st.button("Process"):
-        result_img,result_faces = detect_faces(our_img)
-        st.subheader('Processed Image')
-        st.image(result_img,width = 800)
-        st.success('Found {} faces'.format(len(result_faces)))
+    if st.sidebar.button("Detect Faces 🤖 "):
+        if image_file is not None:
+            result_img,result_faces = detect_faces(our_img)
+            st.write(" ------ ")
+            st.subheader('Processed Image')
+            st.success('Found {} faces'.format(len(result_faces)))
+            st.image(result_img,width = 500)
+        else:
+            st.error("Please Upload Image!!!")

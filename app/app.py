@@ -1,5 +1,6 @@
 import urllib.request
 import streamlit as st
+import facial_recognition
 
 def get_file_content_as_string(path):
     url = 'https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/' + path
@@ -51,6 +52,7 @@ def main():
 
         if (task == SIDEBAR_TASK_FACIAL_RECOGNITION):
             st.header(SIDEBAR_TASK_FACIAL_RECOGNITION)
+            facial_recognition.facial_recognition()
         elif(task == SIDEBAR_TASK_IMAGE_COLORIZATION):
             st.header(SIDEBAR_TASK_IMAGE_COLORIZATION)
         elif (task == SIDEBAR_TASK_STYLE_TRANSFER):

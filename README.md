@@ -1,3 +1,5 @@
+<img src="logo.png" alt="Logo of the project" width="100" height="100">
+
 # Imagine AI [[Live Deployment]](https://share.streamlit.io/hardly-human/imagine-ai/main/app/app.py)
 
 ![](https://img.shields.io/badge/Build-passing-brightgreen)

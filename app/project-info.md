@@ -37,4 +37,4 @@ machine learning & deep learning.
 
 **It upscales images while reducing noise within the image.**
 
-![image-captioning]("./img/super_resolution.png")
+![image-captioning](https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/img/super_resolution.png)

@@ -5,7 +5,7 @@ from facial_recognition import facial_recognition
 from image_colorization import image_colorization
 from style_transfer import style_transfer
 from toonify_image import toonify_image
-from image_captioning import generate_caption
+from super_resolution import enlarge_image
 
 def get_file_content_as_string(path):
     url = 'https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/' + path
@@ -37,9 +37,9 @@ SIDEBAR_TASK_FACIAL_RECOGNITION = "Facial Recognition"
 SIDEBAR_TASK_IMAGE_COLORIZATION = "Image Colorization"
 SIDEBAR_TASK_STYLE_TRANSFER = "Neural Style Transfer"
 SIDEBAR_TASK_TOONIFY_IMAGE = "Toonify Image"
-SIDEBAR_TASK_IMAGE_CAPTIONING = "Image Captioning"
+SIDEBAR_TASK_SUPER_RESOLUTION = "Super Resolution"
 
-SIDEBAR_TASKS = [SIDEBAR_TASK_FACIAL_RECOGNITION, SIDEBAR_TASK_IMAGE_COLORIZATION, SIDEBAR_TASK_STYLE_TRANSFER, SIDEBAR_TASK_TOONIFY_IMAGE, SIDEBAR_TASK_IMAGE_CAPTIONING]
+SIDEBAR_TASKS = [SIDEBAR_TASK_FACIAL_RECOGNITION, SIDEBAR_TASK_IMAGE_COLORIZATION, SIDEBAR_TASK_STYLE_TRANSFER, SIDEBAR_TASK_TOONIFY_IMAGE, SIDEBAR_TASK_SUPER_RESOLUTION]
 
 #####################################
 # main
@@ -66,24 +66,25 @@ def main():
         if (task == SIDEBAR_TASK_FACIAL_RECOGNITION):
             st.header(SIDEBAR_TASK_FACIAL_RECOGNITION)
             facial_recognition()
-            privacy_policy()
+
         elif(task == SIDEBAR_TASK_IMAGE_COLORIZATION):
             st.header(SIDEBAR_TASK_IMAGE_COLORIZATION)
             image_colorization()
-            privacy_policy()
+
         elif (task == SIDEBAR_TASK_STYLE_TRANSFER):
             st.header(SIDEBAR_TASK_STYLE_TRANSFER)
             style_transfer()
-            privacy_policy()
+
 
         elif(task == SIDEBAR_TASK_TOONIFY_IMAGE):
             st.header(SIDEBAR_TASK_TOONIFY_IMAGE)
             toonify_image()
-            privacy_policy()
-        elif(task == SIDEBAR_TASK_IMAGE_CAPTIONING):
-            st.header(SIDEBAR_TASK_IMAGE_CAPTIONING)
-            generate_caption()
-            privacy_policy()
+
+        elif(task == SIDEBAR_TASK_SUPER_RESOLUTION):
+            st.header(SIDEBAR_TASK_SUPER_RESOLUTION)
+            enlarge_image()
+
+        privacy_policy()
 
 
 

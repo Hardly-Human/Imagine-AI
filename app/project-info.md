@@ -33,8 +33,8 @@ machine learning & deep learning.
 
 ## ![toonify-images](https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/img/toonify_images.png)
 
-## Image Captioning
+## Super Resolution
 
-**Summarizes the content of an image in a one sentence description.**
+**It upscales images while reducing noise within the image.**
 
-![image-captioning](https://raw.githubusercontent.com/Hardly-Human/Imagine-AI/main/app/img/image_captioning.png)
+![image-captioning]("./img/super_resolution.png")
